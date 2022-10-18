@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <link rel="shortcut icon" type="x-icon" href="https://previews.123rf.com/images/vectorv/vectorv1906/vectorv190615031/125028960-white-open-in-new-window-icon-isolated-on-white-background-open-another-tab-button-sign-browser-fram.jpg">
+    <!-- Required meta tags -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+    <title>DropBox</title>
+      <style>
+  body{
+    margin: 0px;
+    padding: opx;
+    box-sizing: border-box;
+    background-image: url('https://t3.ftcdn.net/jpg/03/52/89/58/360_F_352895810_RmKEYdMBIjS7f6USedQdONyWkkoxRr3j.jpg');
+    background-position: center;
+<!--    background-size: cover;-->
+    background-repeat: no-repeat;
+    height:100%;
+    width:100%
+    z-index:-1;
+    }
+    body, html {
+  height: 100%;
+  margin: 0;
+}
+
+      .option {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 90%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.corner {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  left: 150%;
+  transform: translate(-25%, -25%);
+  -ms-transform: translate(-25%, -25%);
+  text-align: center;
+}
+<!--upload{-->
+<!--border-radius: 70%;-->
+<!--  display: inline-block;-->
+<!--  position: relative;-->
+<!--  padding: 6px;-->
+<!--  cursor: pointer;-->
+<!--  background: linear-gradient(270deg, #3fa1a9, #79f1a4);-->
+<!--  margin-bottom: 25px;-->
+<!--}-->
+
+.option:hover .image {
+  opacity: 0.3;
+}
+
+.option:hover .middle {
+  opacity: 1;
+}
+.option:hover .corner {
+  opacity: 1;
+}
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.text {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  }
+      .pushpin {
+  margin: 0 auto -15px auto;
+  position: relative;
+  width:20px;
+  height:35px;
+  z-index:1;
+}
+.pushpin.tilted {
+  -ms-transform:rotate(9deg);
+  -moz-transform:rotate(9deg);
+  -webkit-transform:rotate(9deg);
+  -o-transform:rotate(9deg);
+	  transform:rotate(9deg);
+}
+.pinhead {
+	background: darkred;
+	width: 75%;
+	height: 20%;
+	border-radius: 100%;
+	position: relative;
+	left:12.5%;
+	top:0;
+}
+.pinhead:after {
+	content:'';
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: red;
+	position: absolute;
+	top: -30%;
+	left:0;
+}
+
+.pinbase {
+	background: darkred;
+	width: 100%;
+	height: 25%;
+	border-radius: 100%;
+	position: relative;
+	left:0;
+	top:30%;
+}
+.pinbase:after {
+	content:'';
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: red;
+	position: absolute;
+	top: -30%;
+	left:0;
+}
+
+.pinshaft {
+  background: darkred;
+  height: 30%;
+  width: 50%;
+  position: relative;
+  border-radius: 0 ;
+  top: -30%;
+  left: 25%;
+}
+
+.pinshaft:after {
+	content:'';
+	width: 100%;
+	height: 50%;
+	border-radius: 50%;
+	background: darkred;
+	position: absolute;
+	top: 75%;
+}
+
+.pinpoint {
+  display: block;
+  background: #999;
+  height: 70%;
+  width: 14%;
+  position: absolute;
+  border-radius: 0 0 20% 20%;
+  z-index: -50;
+  bottom: 0;
+  left: 43%;
+}
+/* NOTE */
+.stickynote {
+	width:250px;
+	margin:60px auto;
+}
+.stickynote.tilted {
+	transform:rotate(-3deg);
+}
+  .note {
+    font-family: 'Reenie Beanie', cursive;
+    color:#fff;
+	position:relative;
+	width:320px;
+	height:350px;
+	margin:0 auto;
+	padding:20px 20px 10px 20px;
+	font-size:26px;
+	box-shadow:0 25px 25px 5px rgba(0,0,0,0.3);
+	background-color:transparent;
+	border:none;
+	z-index:1;
+}
+
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+      .btt {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.btt img {
+  width: 40%;
+  height: auto;
+}
+.btt1 img {
+  width: 40%;
+  height: auto;
+}
+/* Style the button and place it in the middle of the container/image */
+.btt .btn {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 15px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btt1 .btn {
+  position: absolute;
+  top: 100%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 15px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btt .btn:hover {
+  background-color: black;
+}
+.btt1 .btn:hover {
+  background-color: black;
+}
+<!--.header{-->
+<!--     background-image: url('https://img.freepik.com/free-photo/black-brick-wall-textured-background_53876-63572.jpg?w=740&t=st=1665858520~exp=1665859120~hmac=ada809ef5f049a491bd3de8f153ba468f46038c3d1172a77a1226e07042ebbee');-->
+<!--     background-position: center;-->
+<!--     background-size: cover;-->
+<!--     background-repeat: no-repeat;-->
+<!--     height:200vh;-->
+<!--     }-->
+     .main{
+    width: 100%
+    }
+    nav{
+    width: 100%;
+    padding: 0px 100px;
+    height: 80px;
+    line-height: 80px;
+    display:flex;
+    justify-content: space-between;
+    }
+    .logo a{
+    font-size:40px;
+    color:red;
+    font-weight:bold;
+    margin-left:20px;
+    border-radius: 50%;
+    position: relative;
+
+    float:left;
+    margin-top:36px;
+    cursor: pointer;
+
+    }
+    a{
+    text-decoration:none;
+    color: black;
+    font-size:30px;
+    transition:0.5s all ease;
+    margin-top:36px
+
+    }
+
+    ul{
+    margin: 0px;
+    }
+    ul li{
+    float: left;
+    padding:0px; 10px;
+    list-style:none;
+    margin-right: 50px;
+    color:black;
+    }
+<!--    ul li a:hover{-->
+<!--    color:black;-->
+<!--    }-->
+
+    h1 {
+    text-align: center;
+
+}
+      p{
+      text-align: center;
+      padding:0px 50px;
+      font-size:27px;
+      justify-content:center;
+}
+      #thisform {
+
+  width: 550px;
+  height: 367px;
+  margin: auto;
+  border-radius: 50px;
+<!--  display: flex;-->
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 25px 0px  #3fa1a9;
+  background: #fff;
+  background-image: url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf2.png?raw=true'), url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf.png?raw=true');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 120% -5%, 200% -40%;
+  background-size: 40%, 40%;
+  animation: open .5s;
+ }
+      @keyframes open {
+  0%  {background-position: 166% -25%, 220% -69%;}
+  100%{background-position: 120% -5%, 200% -40%;}
+}
+      #thisform label
+      {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #676767;
+  }
+
+      #thisform input{
+  border-radius: 15px;
+  border: 1px solid #b7b7b7;
+  padding: 5px 5px 5px 10px;
+  font-size: 18px;
+  transition: 0.2s;
+}
+ #thisform input:focus{
+  outline: none;
+  border: 1px solid #64d488;
+}
+
+ #thisform input::placeholder{
+  color: #bebebe;
+  }
+
+
+#thisform caption{
+   padding: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 100px;
+  margin-right: 50px;
+  margin-left: 170px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #676767;
+  max-width: 220px;
+  overflow-wrap: break-word;
+  }
+#thisform image{
+    text-align: center;
+  max-width: 220px;
+  overflow-wrap: break-word;
+   }
+   #thisform button {
+
+  position: center;
+  color: #054231;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  margin-left: 197px;
+  font-size: 20px;
+  padding : 20px;
+  text-align: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 25px;
+  border: none;
+  background: #64d488;
+
+}
+#thisform button:hover{
+  left: 0;
+  color: #fff;
+  width: 180px;
+  box-shadow: 0px 0px 20px 0px  #63d3a6;
+}
+button:focus{
+  outline: none;
+}
+.eH3{
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 60px;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+.elegant {
+    color: #131313;
+<!--    background-color: #e7e5e4;-->
+    letter-spacing: .15em;
+    text-shadow:
+      -1px -1px 0 #767676,
+      -1px 2px 1px #737272,
+      -2px 4px 1px #767474,
+      -3px 6px 1px #787777,
+      -4px 8px 1px #7b7a7a,
+       -5px 10px 1px #7f7d7d,
+/*       -6px 12px 1px #828181,  */
+/*       -7px 14px 1px #868585,  */
+/*       -8px 16px 1px #8b8a89,
+      -9px 18px 1px #8f8e8d,
+      -10px 20px 1px #949392,  */
+/*       -11px 22px 1px #999897,
+      -12px 24px 1px #9e9c9c,  */
+/*       -13px 26px 1px #a3a1a1,
+      -14px 28px 1px #a8a6a6,  */
+/*       -15px 30px 1px #adabab,
+      -16px 32px 1px #b2b1b0,
+      -17px 34px 1px #b7b6b5,
+      -18px 36px 1px #bcbbba,
+      -19px 38px 1px #c1bfbf,
+     -20px 40px 1px #c6c4c4,  */
+/*       -21px 42px 1px #cbc9c8,
+      -22px 44px 1px #cfcdcd,
+      -23px 46px 1px #d4d2d1,  */
+/*       -24px 48px 1px #d8d6d5,  */
+       -25px 50px 1px #dbdad9,
+/*       -26px 52px 1px #dfdddc,   */
+      -27px 54px 1px #e2e0df,
+       -26px 56px 1px #e4e3e2;
+}
+
+.threeD { /* From http://markdotto.com/2011/01/05/3d-text-using-just-css/ */
+  font-size: 40px;
+  color: #f1ebe5;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+      </style>
+  </head>
+  <body>
+  <div class="bg"></div>
+<!--    <h1>Hello, world!</h1>-->
+<!--    <div class="container">-->
+    <div class ="main">
+    <div class="wrapper">
+    <div class="header">
+
+        <nav>
+                <div class ="logo">
+                    <a href="#"><img id="logo" src="https://i.postimg.cc/nVg1RqsT/deep-minds-low-resolution-logo-transparent-background-3.png" width="130" height="130" ></a>
+<!--                    <a href="C:\Users\91936\PycharmProjects\indigilab\project\image\templates\logo.jpeg">food</a>-->
+                </div>
+                <ul>
+                    <li><a href ="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="https://pdf.ac/1ve7L3">FAQ</a>
+                    </li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeZ_mOz-zcDL890ivqb9T03ZEQZSqG3xWUNDdPhDz7GS-ldLA/viewform">Feedback</a>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+        </div>
+    </div>
+        <br>
+    <br>
+    <br>
+        <h1  style="font-family: Georgia, serif; font-size:90px;"><b>DEEP MINDS</b></h1>
+    <br>
+    <br>
+    <br>
+    <p> "To me, photography is an art of observation.
+        It’s about finding something interesting in an ordinary place…
+        I’ve found it has little to do with the things you see and everything to do with the way you see them"
+        A picture speaks more than words !!! So share your thoughts more strongly </p>
+        <br>
+    <br>
+    <br>
+        <div class="container">
+        <div id="thisform">
+            <br>
+            <br>
+        <form action="." method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <br>
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+        </div>
+         <br>
+    <br>
+        <form action="{% url 'search' %}"  class="d-flex container" method="GET">
+      <input name="search" class="form-control me-2" type="search" placeholder="Search by Hashtag" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+<!--            <div class="box elegant">-->
+<!--            <div class="eH3">-->
+<!--             Wall Of Thoughts-->
+<!--</div>-->
+<!--</div>-->
+            <br>
+        <p style="font-family:'Comic Sans MS', cursive; color: black; font-size: 60px">Wall Of Thoughts</p>
+
+{% if obj %}
+<h1>Succesfully uploaded</h1>
+            <h3> To view your uploaded image and to Upload more Go Back!!! {{img_obj.caption}}</h3>
+<img src="{{ obj.image.url}}" alt="image" class="img-thumbnail" >
+{% endif %}
+<hr>
+        {% for x in img %}
+{% if forloop.first %}<div class="row mx-auto">{% endif %}
+<div class="col-lg-4 col-md-4 col-12" >
+<div class="text-center mt-2">
+    <div id="stickynote" class="stickynote tilted">
+        <div class="pushpin tilted">
+		  <div class="pinhead"></div>
+		  <div class="pinbase"></div>
+		  <div class="pinshaft"></div>
+		  <div class="pinpoint"></div>
+		</div>
+        <div class="note" >
+            <div class="option">
+      <img src="{{x.image.url}}" alt="Italian Trulli" class="image" style="width:280px;height:250px;">
+<!--			<img src="{{x.image.url}}" height="250px" width="250px" class="img-thumbnail" alt="...">-->
+              <h2 class="text-center" style="font-family:'Comic Sans MS', cursive; color: black; font-size: 40px">{{x.caption}}</h2>
+                <div class="middle">
+                <div class="btt">
+<!--                    <div class="tooltip dw">-->
+<!--            <span class="tooltipText dw">Download</span>-->
+      <a href="{{x.image.url}}" class="btn" download><i class="fa fa-download"></i></a>
+                      </div></div>
+                <div class="corner">
+                    <div class="btt1">
+<!--                        <div class="tooltip vi">-->
+<!--            <span class="tooltipText vi">View</span>-->
+      <a href="{{x.image.url}}" class="btn"><i class="fa fa-eye"></i></a>
+                        </div></div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+{% if forloop.counter|divisibleby:3 %}
+</div>
+<div class=row mx-auto mt-100>{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+
+{% endfor %}
+    </div>
+<!--        </div>-->
+    <!--<script src="ex.js"></script>-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
